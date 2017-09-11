@@ -9,8 +9,9 @@ class Product(object):
 		self.cost = cost
 		self.status = status 
 		status = "for sale"
-		self.displayinfo()
+		#self.displayinfo()
 	def displayinfo(self):
+		print ("\n" + ("#" * 20))
 		print ("Price: $" + str(self.price))
 		print ("Name:" +  self.item_name)
 		print ("Weight:" +  str(self.weight))
@@ -33,15 +34,19 @@ class Product(object):
 			self.status = 'used'
 			self.price = self.price - (self.price *0.20)
 		return self			
-				
-product1 = Product(450.00,"XBox",35,"MS",35,'new')
-product1.sell()
-product1.addTax(0.08)
-product1.displayinfo()
-product1.returnItem('opened').displayinfo()
+		
 
-product2 = Product(250.00,"wii",15,"EA",50,"like new")
-product2.addTax(0.075).returnItem('defective').sell().displayinfo()
+if __name__ == "__main__":
+	product1 = Product(450.00,"XBox",35,"MS",35,'new')
+	product1.sell()
+	product1.addTax(0.08)
+	product1.displayinfo()
+	product1.returnItem('opened').displayinfo()
 
-product3 = Product(350.00,"PlayStation",22,"Sony",20, "defective")
-product3.addTax(0.05).displayinfo()
+if __name__ == "__main__":
+	product2 = Product(250.00,"wii",15,"EA",50,"like new")
+	product2.addTax(0.075).returnItem('defective').sell().displayinfo()
+
+if __name__ == "__main__":
+	product3 = Product(350.00,"PlayStation",22,"Sony",20, "defective")
+	product3.addTax(0.05).displayinfo()
